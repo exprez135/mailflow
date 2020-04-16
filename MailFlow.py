@@ -8,7 +8,7 @@ def Category(classname):
 def Class(classname):
     return objc.lookUpClass(classname)
 
-def flow(text, width = 77):
+def flow(text, width = 73):
     quote, indent = re.match(r'(>+ ?|)(\s*)', text, re.UNICODE).groups()
     prefix = len(quote)
     if text[prefix:] == u'-- ':

@@ -30,6 +30,18 @@ lost. Mail has been furnished with a plugin interface, albeit an
 undocumented one, and MailFlow hooks into this to improve the situation.
 
 
+This Fork
+---------
+
+This fork of MailFlow wraps text to 72 characters instead of 76. 72
+characters is compliant with RFC 678 and is the standard for email.
+
+Please write to Nate Ijams <exprezdev@pm.me> with feedback.
+
+See the original (76 character-wrapping) MailFlow at:
+https://github.com/arachsys/mailflow
+
+
 Installation
 ------------
 
@@ -64,7 +76,7 @@ paragraphs into reflowable lines in RFC2646 format=flowed format and disable
 quoted-printable transfer encoding for plain text email.
 
 In outbound plain text messages, lines are broken at word boundaries to wrap
-the text to 76 columns wide, and a trailing space is added wherever a line
+the text to 72 columns wide, and a trailing space is added wherever a line
 has been broken. Where a line to be broken is quoted, the continuation line
 is quoted to the same level. Finally, to signal the message has been flowed,
 the parameters format=flowed and delsp=yes are added to the text/plain
@@ -75,7 +87,7 @@ them to fit displays of differing widths. This is especially useful for
 mobile devices.
 
 Unlike Apple's original format=flowed implementation, MailFlow will never
-break a line within a word, even if that word is longer than 76 characters.
+break a line within a word, even if that word is longer than 72 characters.
 This was typically an issue with long URLs pasted into messages: breaking
 these to fit an 80-column display usually causes more problems than it
 solves, and some format=flowed aware clients do not fully support the
